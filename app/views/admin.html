@@ -1,0 +1,27 @@
+<div ng-controller="AdminController">
+	<div class="page-content">
+		<div class="container">
+			<div class="col-sm-3">
+				<list opt=menu.opt data=menu.data on-select="menu.onSelect(item)"></list>
+			</div>
+			<div class="col-sm-9">
+				<div id="user-manager" class="mgr-page">
+					<grid opt=userGrid.opt data=userGrid.data on-select="userGrid.onSelect(item)"></grid>
+				</div>
+				<div id="msg-manager" class="mgr-page">
+					<grid opt=msgGrid.opt data=msgGrid.data on-select="msgGrid.onSelect(item)"></grid>
+				</div>
+				<div id="img-manager" class="mgr-page">
+					<grid opt=imgGrid.opt data=imgGrid.data on-select="imgGrid.onSelect(item)"></grid>
+				</div>
+				<div id="traffic-manager" class="mgr-page">
+					<div>Daily users:</div>
+					<div>Monthly users:</div>
+					<div>Location of users:</div>
+				</div>
+				<div id="payment-manager" class="mgr-page">
+				</div>
+			</div>
+		</div>
+	</div><!-- end of page-content -->
+</div>

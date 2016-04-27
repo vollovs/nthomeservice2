@@ -1,0 +1,4 @@
+<select class="form-control z-dropdown" ng-model="selected.val" placeholder="{{ opt.placeholder }}">
+	<option value="">{{opt.placeholder}}</option>
+    <option ng-repeat="d in data" value="{{d[opt.valueField]}}">{{d[opt.valueField]}}</option>
+</select>

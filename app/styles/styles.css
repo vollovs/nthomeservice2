@@ -1,0 +1,39 @@
+#map_canvas {
+	height: 400px;
+	background-color: #CCC;
+}
+
+.headbar {
+	padding-top: 15px;
+	background: none repeat scroll 0 0 #F4F4F4;
+	height: 30px;
+}
+
+
+.menu-top {
+	height: 40px;
+	margin-left: 60px;
+	margin-top: 18px;
+}
+
+.menu {
+	margin-right: 30px;
+}
+
+.breadcrumb {
+	border-bottom: 2px solid #1377D5;
+}
+
+.split {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #E2E2E2;
+}
+
+.box {
+	margin-top: 25px;
+}
+
+#community {
+	font-size: 21px;
+}

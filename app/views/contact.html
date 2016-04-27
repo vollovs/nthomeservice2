@@ -1,0 +1,74 @@
+<div class="container page-content" ng-controller="ContactController">
+	<!--  div class="contact-map row">
+		<div id="contact-map-canvas" ng-init="init()"></div> 
+	</div -->
+	
+	<div class="contact-area col-md-5">
+		<h3>Office Hours:</h3>
+		<p>
+		9:00 AM to 8:00 PM, Mon to Fri<br/>
+		</p>
+		
+		<h3>Address:</h3>
+		<p>1087 Foxcreek Road<br/>
+		London, Ontario, N6G 0C9<br/>
+		</p>
+		
+		<h3>Contact:</h3>
+		<div class="contacts">
+			<div class="contact">
+				<span class="contact-title">London Offices:</span><br/>
+				Foxcreek Branch:<br/>
+				1087 Foxcreek Rd<br/>
+				London, Ontario, N6G 0C9<br/>
+				
+				Tel: 519-932-0586<br/>
+				E-mail: westudents.service@gmail.com<br/>
+				<br>
+			</div>
+			
+			<div class="contact">
+				<span class="contact-title">Kitchener Offices:</span><br/>
+				Kitchener Branch:<br/>
+				48 Steepleridge St<br/>
+				Kitchener, Ontario, N2P 2W3<br/>
+				
+				Tel: 519-616-3168<br/>
+				E-mail: westudents.service@gmail.com<br/>
+				<br>
+			</div>			
+		</div><!-- /.contacts -->
+	</div><!-- /.contact-area -->
+	
+	
+     <div class="col-md-7">
+     	<div class="col-sx-12 col-sm-12 col-md-12 item-wizard">
+			<div class="col-sx-12 col-sm-12 col-md-12 wizard-container">				
+				<div class="z-group">
+					<div class="col-md-2 l-label"><span translate>Email</span>:</div>
+					<div class="col-md-10 l-field">
+						<input class="form-control" type="text" name="email" ng-model="msg.from" placeholder="{{'Email'| translate }}" />
+						<div class="z-error">{{error.email}}</div>
+					</div>
+				</div>
+				
+				<div class="z-group">
+					<div class="col-md-2 l-label"><span translate>Message</span>:</div>
+					<div class="col-md-10 l-field">
+						<textarea class="form-control" rows="10" name="message" ng-model="msg.text" placeholder="{{'Message' | translate }}"></textarea>
+						<div class="z-error">{{error.message}}</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row btn-area">
+				<div class="col-sx-12 col-sm-12 col-md-2 l-label"></div>
+				<div class="col-sx-12 col-sm-12 col-md-10 l-field">
+					<button class="btn btn-primary" ng-click="postMsg()" translate>Submit</button>
+				</div>
+			</div>
+		</div><!-- .item-wizard -->
+     </div>
+</div>
+
+

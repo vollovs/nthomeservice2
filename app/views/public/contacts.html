@@ -1,0 +1,76 @@
+<div ng-controller="ContactController">
+	<img src="assets/img/banner_page.jpg" class="img-responsive" alt="Responsive image">
+	<h4 class="breadcrumb">Contact Us</h4>
+		<div class="row">
+			<div class="col-lg-12">
+			<h2 >Emails</h2>
+			<ul>
+				<li>For information about pricing, please contact : sales@nthomeservice.ca
+				</li>
+				<li>For information about service, please contact : services@nthomeservice.ca
+				</li>
+				<li>For information about support, please contact : support@nthomeservice.ca
+				</li>
+			</ul>
+			</div>
+		</div>
+		<hr>
+      <div class="row">
+        <div class="col-lg-4">
+          <h2 >Great Toronto Area</h2>
+          <p>50 Venture Dr, unit 10<br> Scarborough, ON M1B 3L6 </p>
+          <p></p>
+          <p>Tel: 647-868-7058, 647-845-3088</p>
+          <p>Toll Free: 1-855-282-2958</p>
+        </div>
+        <div class="col-lg-8">
+          <iframe width="750" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=50+Venture+Dr+%2310,+Scarborough,+ON+M1B+3L6&amp;aq=&amp;sll=43.501194,-80.539398&amp;sspn=0.014459,0.031629&amp;ie=UTF8&amp;hq=&amp;hnear=50+Venture+Dr+%2310,+Toronto,+Toronto+Division,+Ontario+M1B+3E8&amp;t=m&amp;z=14&amp;ll=43.805376,-79.198379&amp;output=embed"></iframe>
+       </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-4">
+          <h2 >South West Ontario</h2>
+          <p>585 Colby Dr Waterloo, ON N2V 1A1 <br> Equipment Storage (U-HAUL)  </p>
+          <p></p>
+          <p>Tel: 519-781-8735</p>
+        </div>
+        <div class="col-lg-8">
+        <iframe width="750" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+        src="https://maps.google.ca/maps?q=585+Colby+Dr+Waterloo,+ON+N2V+1A1&amp;ie=UTF8&amp;hq=&amp;hnear=585+Colby+Dr,+Waterloo,+Ontario+N2V+1A1&amp;t=m&amp;z=14&amp;ll=43.501194,-80.539398&amp;output=embed"></iframe>
+        
+        </div>
+      </div>
+	  
+	  <div class="row" style="margin-top:40px;">
+	  	<div class="col-md-4">
+          <h2 >Message Us</h2>
+        </div>
+     	<div class="col-md-8 item-wizard" style="padding-left:0px;padding-right:0px;">
+			<div class="col-md-12" style="padding-left:0px;padding-right:0px;">				
+				<div class="z-group">
+					<div class="col-md-12 l-label"><span translate>Email</span>:</div>
+					<div class="col-md-12 l-field">
+						<input class="form-control" type="text" name="email" ng-model="msg.from" placeholder="{{'Email'| translate }}" />
+						<div class="z-error">{{error.email}}</div>
+					</div>
+				</div>
+				
+				<div class="z-group">
+					<div class="col-md-12 l-label"><span translate>Message</span>:</div>
+					<div class="col-md-12 l-field">
+						<textarea class="form-control" rows="10" name="message" ng-model="msg.text" placeholder="{{'Message' | translate }}"></textarea>
+						<div class="z-error">{{error.message}}</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-12 btn-area" style="padding-left:0px;padding-right:0px;">
+				<div class="col-sx-12 col-sm-12 col-md-10 l-field">
+					<button class="btn btn-primary" ng-click="postMsg()" translate>Submit</button>
+				</div>
+			</div>
+		</div><!-- .item-wizard -->
+     </div>
+</div>      
+      

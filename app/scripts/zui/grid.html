@@ -1,0 +1,20 @@
+<div class='row z-grid'>
+	<table class="z-grid-head">
+		<tbody>
+			<tr>
+				<td ng-repeat="field in opt.fields" style="width:{{field.width}};">
+					{{field.text}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="z-grid-body">
+		<tbody>
+			<tr ng-repeat="row in data" ng-click="select(row)" z-id="{{row.id}}">
+				<td ng-repeat="field in opt.fields" style="width:{{field.width}};">
+					{{row[field.name]}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

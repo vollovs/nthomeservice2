@@ -1,0 +1,46 @@
+
+/* Global Style */
+.form-control{
+	border-radius:0px;
+}
+
+/* List start */
+.z-list{
+	margin-top:0px;
+}
+
+.z-list ul{
+	list-style:none;
+}
+
+.z-list li.z-row{
+	line-height:32px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	padding-left:10px;
+}
+.z-list li.z-row:first-child{
+	border-top:1px solid #ccc;
+}
+
+.z-list li.z-row:hover{
+	background-color: #ddd;
+}
+/* List end */
+
+/* Grid start */
+.z-grid td{
+	line-height:32px;
+	padding-left:10px;
+	padding-right:10px;
+	border:1px solid #ccc;
+}
+.z-grid-head td{
+	font-weight:bold;
+}
+
+.z-grid-body tr:hover{
+	background-color: #ddd;
+}
+/* Grid end */
