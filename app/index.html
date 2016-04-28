@@ -44,15 +44,13 @@
 <body ng-app="myApp">
 	<div class="container main-header" ng-controller="HeaderController">
 		<div class="col-md-12" style="margin-top:20px;margin-bottom:20px;">
-			<p class="text-primary col-md-9">Best local energy solutions supplier in GTA and South west Ontario</p> 
-			<form class="col-md-3 pull-right" action="/community">
-				<input type="submit" class="btn btn-primary" value="Community Engagement">
-			</form>
-			<div class="col-md-2" ng-hide="isLoggedIn()">
-				<div class="btn btn-primary">Login</div>
-			</div>
-			<div class="col-md-2" ng-show="isLoggedIn()">
-				<div class="btn btn-primary">Logout</div>
+			<div class="text-primary col-md-7">Best local energy solutions supplier in GTA and South west Ontario</div>
+			<div class="col-md-5">
+				<div class="btn btn-primary pull-right h-gap" ng-hide="isLoggedIn()" ng-click="redirectTo('admin')">Login</div>
+				<div class="btn btn-primary pull-right h-gap" ng-show="isLoggedIn()" ng-click="logout()">Logout</div>
+				<form class="pull-right" action="/community">
+					<input type="submit" class="btn btn-primary" value="Community Engagement">
+				</form>
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -66,7 +64,7 @@
 					<li ng-class="{ active: isActive('/rebate')}" ng-hide="isLoggedIn()"><a href="/#/rebate">Rebate</a></li>
 		  
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+						<a href="/#/water-heater" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/#/water-heater">Water Heater</a></li>
 							<li><a href="/#/furnace">Furnace</a></li>

@@ -7,11 +7,12 @@ angular.module('admin', [])
 		  function($http, $scope, $rootScope, $location, $ms, $window ) {
 			
 			$scope.menu = {
-					data: [{name:'User Management', val:'user'},
-					       {name:'Message Management', val:'msg'},
-					       {name:'Picture Manangement', val:'img'}, 
-					       {name:'Traffic Tracking', val:'traffic'},
-					       {name:'Payment Management', val:'payment'}],
+					data: [//{name:'User Management', val:'user'},
+					       {name:'Message Management', val:'msg'}
+					       //{name:'Picture Manangement', val:'img'}, 
+					       //{name:'Traffic Tracking', val:'traffic'},
+					       //{name:'Payment Management', val:'payment'}
+					       ],
 					opt: {
 						textField:'name',
 						valueField:'val',
@@ -42,7 +43,7 @@ angular.module('admin', [])
 			$scope.msgGrid = {
 					data: [],
 					opt:{
-						fields: [{name:'dt', text:'Time', width:'220px'},
+						fields: [{name:'dt', text:'Time', width:'180px'},
 						         {name:'from', text:'From', width:'180px'}, 
 						         {name:'text', text:'Message', width:'320px'}]
 					},
@@ -100,7 +101,7 @@ angular.module('admin', [])
 			
 			//init
 			$('.mgr-page').hide();
-			$('#user-manager').show();
+			$('#' + $scope.menu.data[0].val + '-manager').show();
 
 		}]);			
 

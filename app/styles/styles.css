@@ -37,3 +37,12 @@
 #community {
 	font-size: 21px;
 }
+
+.h-gap{
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#msg-manager .z-grid-body td{
+	font-size:12px;
+}
