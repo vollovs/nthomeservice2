@@ -33,14 +33,20 @@ angular.module('main')
 				});
 			}
 			
+			// s - "2016-04-28T19:43:50.415Z"
+			function getCurrDTStr(){
+				var dt = new Date();
+			    var s = dt.toISOString();
+				return s.split('.')[0].replace(/T/g, ' ');
+			}
+			
 			//------------------------------------------------------------------------------------
 			// submit, anonymouse can submit a message
 			//------------------------------------------------------------------------------------
 			$scope.postMsg = function () {
 			    
 				if($scope.msg.from!='' && $scope.msg.text!=''){
-					var dt = new Date();
-				    $scope.msg.dt = dt.toISOString();
+				    $scope.msg.dt = getCurrDTStr();
 				    $scope.msg.to = 'admin';
 				    
 					_postMessage($scope.msg, function(){
