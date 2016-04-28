@@ -32,6 +32,13 @@ angular.module('main')
 				else
 					return false;
 			}
+			
+			$scope.goProductPage = function(){
+				var p = $location.path();
+				if(!(p.find('/ac')!=-1 || p.find('/water-heater')!=-1 || p.find('/water-heater')!=-1)){
+					$location.path('/water-heater');
+				}
+			} 
 			//--------------------------------------------------------------------
 			// When navigate to the home page, init() will be called to 
 			// 1. load filter from the cookie
