@@ -12,7 +12,7 @@
 		<tbody>
 			<tr ng-repeat="row in data" ng-click="select(row)" z-id="{{row.id}}">
 				<td ng-repeat="field in opt.fields" style="width:{{field.width}};">
-					{{row[field.name]}}
+					{{ row[field.name] | limitTo:field.limit }}
 				</td>
 			</tr>
 		</tbody>
