@@ -45,7 +45,7 @@ angular.module('zui',[])
 			}
 
 			function init() {
-			    if (opt.bEdit) {
+			    if (opt && opt.bEdit) {
 			        var s = scope.selected;
 			        if (s) {
 			            select(s.value, s.text);

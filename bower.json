@@ -23,6 +23,7 @@
     "angular-translate":"2.8.x",
     "jquery":"~2.1.0",
     "bootstrap":"3.3.5",
+    "font-awesome":"4.5.0",
     "less":"~2.1.x",
     "jsencrypt":"2.x"
   }

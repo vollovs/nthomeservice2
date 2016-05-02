@@ -7,6 +7,11 @@
 	border-radius: 2px;
 }
 
+.z-row{
+	min-width:90px;
+	margin-left:5px;
+}
+
 /* List start */
 .z-list{
 	margin-top:0px;

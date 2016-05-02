@@ -18,6 +18,28 @@ angular.module('main')
 			
 			$scope.init = function() {
 		    	//MapService.drawMap({id: 'contact-map-canvas', marker:{title:'Westudents.ca', address:'1087 Foxcreek Rd, London, ON, Canada'}});
+			
+				$scope.cityDropdown = {
+						data: [{name:'Branptom'},{name:'Kitchener'},{name:'Waterloo'}, {name:'Toronto'} ],
+						opt:{
+							placeholder:'Please Select ...',
+							textField: 'name',
+							valueField: 'name'
+						},
+						selected:{
+							'text':'Please Select ...',
+							'val':''
+						}
+					}
+				
+				$scope.types = [{
+					    opt: { title: 'AC', enabled: true },
+					    checked: true,
+					    onAfter: function (bChecked) {
+					        //alert(bChecked ? 'Checked' : 'Unchecked');
+					    }
+					}];
+			
 			}
 
 			
@@ -90,4 +112,5 @@ angular.module('main')
 				var fields = Object.keys(errors);				
 			}
 			
+			$scope.init();
 		}]);
