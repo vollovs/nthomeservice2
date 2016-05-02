@@ -62,15 +62,31 @@
 /* uploader end */
 
 /* Tab start */
-.z-tab-heads {
+ul.z-tab-heads {
 	list-style-type:none;
 }
 
 .z-tab-heads li{
 	float:left;
-	border: 1px solid #ddd;
-	padding:10px;
 }
 
+ul.z-tab-heads .tab-item{
+	line-height:42px;
+	padding-left:10px;
+	padding-right:10px;
+	border-top:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+ul.z-tab-heads li:first-child .tab-item{
+	border-left:1px solid #ddd;
+}
+
+ul.z-tab-heads li.active .tab-item{
+	border-bottom:0px solid #ddd;
+}
 
 /* Tab end */

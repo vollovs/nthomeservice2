@@ -542,7 +542,7 @@ angular.module('zui',[])
 // Template example:
 //<tab opt=my.opt data=my.data class="z-tab">
 //    <ul class="z-tab-heads">
-//        <li ng-repeat="t in tab.data">{{t.text}}</li>
+//        <li ng-repeat="t in tab.data"><div class="tab-item">{{t.text}}</div></li>
 //    </ul>
 //    <div class="z-page" data-index="0">
 //        Fill in my own page 1
@@ -570,7 +570,7 @@ angular.module('zui',[])
             
             $headHolder.empty();
             for(var i=0; i<scope.data.length; i++){
-            	$headHolder.append('<li>' + scope.data[i].text + '</li>');
+            	$headHolder.append('<li><div class="tab-item">' + scope.data[i].text + '</div></li>');
             }
             
             var $heads = $ctrl.find('.z-tab-heads li');
@@ -593,7 +593,7 @@ angular.module('zui',[])
                 for (var i = 0; i<tabs.length; i++){
                     var t = tabs[i];
                     w = (t.text.length < maxchars)? wpc * t.text.length : wpc * maxchars;
-                    $($heads[i]).width(w);
+                    $($heads[i]).find('.tab-item').width(w);
                 }
             }
 
