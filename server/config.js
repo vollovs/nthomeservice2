@@ -21,7 +21,7 @@ module.exports = {
 	jwt:{
 		secret: 'myusername_hmacsha256',
 		algorithm: 'HS256',
-		expiresInSeconds: 180
+		expiresInSeconds: 1800
 	},
 	privateKeyPath: './rsa_1024_priv.pem'
 }

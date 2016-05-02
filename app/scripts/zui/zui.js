@@ -559,10 +559,20 @@ angular.module('zui',[])
             data: '=',
             selected: '='
         },
+        template: 
+        	'<ul class="row z-tab-heads"></ul>' +
+        	'<div ng-transclude></div>',
         transclude: true,
         link: function (scope, element, attrs) {
 
-            var $ctrl = $(element).find('.z-tab');
+            var $ctrl = $(element);
+            var $headHolder = $ctrl.find('.z-tab-heads');
+            
+            $headHolder.empty();
+            for(var i=0; i<scope.data.length; i++){
+            	$headHolder.append('<li>' + scope.data[i].text + '</li>');
+            }
+            
             var $heads = $ctrl.find('.z-tab-heads li');
             var $pages = $ctrl.find('.z-page');
 
@@ -572,9 +582,9 @@ angular.module('zui',[])
 
             // Default values
             var padding = (scope.opt && scope.opt.padding) > 0 ? scope.opt.padding : 10;
-            var wpc = 8; // width per char
+            var wpc = 10; // width per char
             var maxchars = (scope.opt && scope.opt.maxchars > 0) ? scope.opt.maxchars : 50;
-            var w = wpc * maxchars;
+            var w = wpc * maxchars + 2 * padding;
 
 
             scope.opt.maxchars = maxchars;
@@ -591,7 +601,7 @@ angular.module('zui',[])
             // Argument:
             //  None
             scope.initTabs = function () {
-            	scope.showTab(0);
+                scope.showTab(0);
             }
 
             //-------------------------------------------------
@@ -703,37 +713,49 @@ angular.module('zui',[])
                 }
                 return { 'result': bPass, 'index': i };
             }
+            
+			function find(a, k, v){
+				if(a){
+					var len = a.length;
+					for(var i=0; i<len; i++){
+						var b = a[i];
+						if(b && b.hasOwnProperty(k) && b[k] == v){
+							return i;
+						}
+					}
+				}
+				return -1;
+			}
 
-            //-------------------------------------------------
-            // tab head click handler
-            $.each($heads, function (k, v) {
-                $(v).click(function (e) {
-                    var index = parseInt($(this).data('index')) - 1;
 
-                    var r = validatePrevPages(index);
-                    if (r.result) {
-                        scope.showPage(index);
-                        scope.showPager(index);
-                        scope.selected = { 'index': index };
-                    } else {
-                        scope.showPage(r.pageIndex);
-                        scope.showPager(r.pageIndex);
-                        scope.selected = { 'index': r.pageIndex };
-                    }
-                });
-            });
-
-            scope.$watch("selected", function (newVal, oldVal) {
+			scope.$watch("selected", function (newVal, oldVal) {
                 if (scope.selected) {
                     var index = parseInt(scope.selected.index);
-                    scope.showPager(index);
+                    scope.showTab(index);
                     scope.showPage(index);
                 }
             });
 
             scope.initTabs();
             scope.initPages();
-
+            //-------------------------------------------------
+            // tab head click handler
+			$.each($heads, function(i, v){
+				$(v).click(function(index){
+					return function(){
+						var r = validatePrevPages(index);
+	                    if (r.result) {
+	                        scope.showPage(index);
+	                        scope.showTab(index);
+	                        scope.selected = { 'index': index };
+	                    } else {
+	                        scope.showPage(r.index);
+	                        scope.showTab(r.index);
+	                        scope.selected = { 'index': r.index };
+	                    }
+					}
+				}(i));
+			});
         }// end of link
     }
 })

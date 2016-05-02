@@ -65,3 +65,6 @@
 }
 /* Global define start*/
 
+.msg-body span{
+	font-weight:bold;
+}

@@ -7,6 +7,16 @@ angular.module('admin', [])
 		  function($http, $scope, $rootScope, $location, $ms, $window ) {
 			
 			$scope.menu = {
+					opt:{
+						padding:10,
+						maxchars:30
+					},
+					data:[{text:'Message Management'}, 
+						  //{text:'Advanced'}
+					]
+				}
+			
+/*			$scope.menu = {
 					data: [//{name:'User Management', val:'user'},
 					       {name:'Message Management', val:'msg'}
 					       //{name:'Picture Manangement', val:'img'}, 
@@ -26,7 +36,7 @@ angular.module('admin', [])
 						$('.mgr-page').hide();
 						$('#'+item.val +'-manager').show();
 					}
-				}
+				}*/
 			
 			$scope.userGrid = {
 					data: [{username:'admin', email:'likzhang@gmail.com'}],
@@ -43,18 +53,21 @@ angular.module('admin', [])
 			$scope.msgGrid = {
 					data: [],
 					opt:{
-						fields: [{name:'dt', text:'Time', width:'180px'},
-						         {name:'from', text:'From', width:'180px'}, 
+						fields: [{name:'dt', text:'Time', width:'170px'},
+						         {name:'from', text:'From', width:'160px'}, 
 						         {name:'text', text:'Message', width:'320px'}]
 					},
 					selected:{dt:'', from:'', msg: ''}, 
 					onSelect:function(item){
-						
+						$scope.item = item;
 					}
 				}
 			
 			getMessage({}, function(d){
 				$scope.msgGrid.data = d.messages;
+				if(d.messages){
+					$scope.item = d.messages[0];
+				}
 				//setTimeout(function(){
 				//	$scope.$apply();
 				//},0);

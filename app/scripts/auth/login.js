@@ -116,7 +116,7 @@ angular.module('auth',[])
 						$ms.setSessionItem('token', data.token);
 						$ms.setSessionItem('user', data.decoded);
 						$rootScope.$broadcast("OnUpdateHeader");
-						startTokenRefreshTask();
+						//startTokenRefreshTask();
 						
 						if(data.decoded.username == 'admin'){
 							$location.path('/admin');

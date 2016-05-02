@@ -1,16 +1,28 @@
 <div ng-controller="AdminController">
 	<div class="page-content">
-		<div class="container">
-			<div class="col-sm-3">
+			<tab opt=menu.opt data=menu.data class="z-tab">
+		    	<div class="z-page" data-index="0" id="msg-manager" class="row mgr-page">
+		    		<div class="col-sm-8">
+						<grid opt=msgGrid.opt data=msgGrid.data on-select="msgGrid.onSelect(item)"></grid>
+					</div>
+					<div class="msg-body col-sm-4">
+						<div><span>From:</span>{{item.from}}</div>
+						<div><span>Date:</span>{{item.dt}}</div>
+						<br>
+						<div>{{item.text}}</div>
+					</div>
+				</div>
+			</tab>
+			<!-- div class="col-sm-3">
 				<list opt=menu.opt data=menu.data on-select="menu.onSelect(item)"></list>
 			</div>
-			<div class="col-sm-9">
+				<div id="msg-manager" class="mgr-page">
+					
+				</div>
 				<div id="user-manager" class="mgr-page">
 					<grid opt=userGrid.opt data=userGrid.data on-select="userGrid.onSelect(item)"></grid>
 				</div>
-				<div id="msg-manager" class="mgr-page">
-					<grid opt=msgGrid.opt data=msgGrid.data on-select="msgGrid.onSelect(item)"></grid>
-				</div>
+
 				<div id="img-manager" class="mgr-page">
 					<grid opt=imgGrid.opt data=imgGrid.data on-select="imgGrid.onSelect(item)"></grid>
 				</div>
@@ -20,8 +32,7 @@
 					<div>Location of users:</div>
 				</div>
 				<div id="payment-manager" class="mgr-page">
-				</div>
-			</div>
-		</div>
+				</div-->
+				
 	</div><!-- end of page-content -->
 </div>
