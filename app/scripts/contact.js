@@ -33,8 +33,22 @@ angular.module('main')
 					}
 				
 				$scope.types = [{
-					    opt: { title: 'AC', enabled: true },
+					    opt: { title: 'Water Heater', enabled: true },
 					    checked: true,
+					    onAfter: function (bChecked) {
+					        //alert(bChecked ? 'Checked' : 'Unchecked');
+					    }
+					},
+					{
+					    opt: { title: 'Furnance', enabled: true },
+					    checked: false,
+					    onAfter: function (bChecked) {
+					        //alert(bChecked ? 'Checked' : 'Unchecked');
+					    }
+					},
+					{
+					    opt: { title: 'AC', enabled: true },
+					    checked: false,
 					    onAfter: function (bChecked) {
 					        //alert(bChecked ? 'Checked' : 'Unchecked');
 					    }
