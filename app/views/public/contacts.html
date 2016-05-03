@@ -60,11 +60,12 @@
 		
 		    <div class="col-sm-12" style="padding-left:0px;padding-right:0px;margin-bottom:15px;">
 				<div class="z-group">
-					<div class="col-md-12 l-label"><span translate>Type</span>:</div>
+					<div class="col-md-12 l-label"><span translate>Service</span>:</div>
 					<div class="col-md-12 l-field">
-						<div ng-repeat="t in types">
+						<dropdown opt=serviceDropdown.opt data=serviceDropdown.data selected=serviceDropdown.selected></dropdown>
+						<!--  div ng-repeat="t in types">
 							<checkbox opt=t.opt checked=t.checked on-after="t.onAfter(bChecked)"></checkbox>
-						</div>
+						</div-->
 					</div>
 				</div>
 			</div>

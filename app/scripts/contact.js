@@ -10,9 +10,9 @@ angular.module('main')
 
 .controller('ContactController',
 		[ '$http', '$scope', '$rootScope', //'MapService', 
-		  '$location', 'MainService',
+		  '$location', 'MainService', 'ValidateService',
 		  function($http, $scope, $rootScope, //$map, 
-				  $location,  $ms ) {
+				  $location,  $ms, $vs ) {
 
 			//$ms.resize();
 			
@@ -32,27 +32,39 @@ angular.module('main')
 						}
 					}
 				
-				$scope.types = [{
-					    opt: { title: 'Water Heater', enabled: true },
-					    checked: true,
-					    onAfter: function (bChecked) {
-					        //alert(bChecked ? 'Checked' : 'Unchecked');
-					    }
-					},
-					{
-					    opt: { title: 'Furnance', enabled: true },
-					    checked: false,
-					    onAfter: function (bChecked) {
-					        //alert(bChecked ? 'Checked' : 'Unchecked');
-					    }
-					},
-					{
-					    opt: { title: 'AC', enabled: true },
-					    checked: false,
-					    onAfter: function (bChecked) {
-					        //alert(bChecked ? 'Checked' : 'Unchecked');
-					    }
-					}];
+				$scope.serviceDropdown = {
+						data: [{name:'Water Heater'}, {name:'Furnance'}, {name:'A/C'} ],
+						opt:{
+							placeholder:'Please Select ...',
+							textField: 'name',
+							valueField: 'name'
+						},
+						selected:{
+							'text':'Please Select ...',
+							'val':''
+						}
+					}
+//				$scope.types = [{
+//					    opt: { title: 'Water Heater', enabled: true },
+//					    checked: true,
+//					    onAfter: function (bChecked) {
+//					        //alert(bChecked ? 'Checked' : 'Unchecked');
+//					    }
+//					},
+//					{
+//					    opt: { title: 'Furnance', enabled: true },
+//					    checked: false,
+//					    onAfter: function (bChecked) {
+//					        //alert(bChecked ? 'Checked' : 'Unchecked');
+//					    }
+//					},
+//					{
+//					    opt: { title: 'AC', enabled: true },
+//					    checked: false,
+//					    onAfter: function (bChecked) {
+//					        //alert(bChecked ? 'Checked' : 'Unchecked');
+//					    }
+//					}];
 			
 			}
 
@@ -84,6 +96,8 @@ angular.module('main')
 				if($scope.msg.from!='' && $scope.msg.text!=''){
 				    $scope.msg.dt = getCurrDTStr();
 				    $scope.msg.to = 'admin';
+				    $scope.msg.city = $scope.cityDropdown.selected.val;
+				    $scope.msg.category = $scope.serviceDropdown.selected.val;
 				    
 					_postMessage($scope.msg, function(){
 						//$scope.msg.from = '';
@@ -95,7 +109,33 @@ angular.module('main')
 				}
 			}
 			
-			function validate(values){
+			function validate(){
+		            var bPass = true;
+		            if ($vs.isEmpty($scope.msg.city)) {
+		                $scope.msg.cityError = 'Please select a city.';
+		                bPass = false;
+		            }
+		            if ($vs.isEmpty($scope.msg.service)) {
+		                $scope.msg.serviceError = 'Please select a service.';
+		                bPass = false;
+		            }
+		            if ($vs.isEmpty($scope.msg.text)) {
+		                $scope.msg.textError = 'Please enter message.';
+		                bPass = false;
+		            //} else if ($vs.hasInvalidChar($scope.customer.Name)) {
+		            //    $scope.msg.nameError = 'You can not use following chars:  \/\\:\*\?\"<>\|';
+		            //    bPass = false;
+		            } else if ($vs.max($scope.msg.text, 1500)) {
+		                $scope.msg.textError = 'Please use no more than 1500 characters.';
+		                bPass = false;
+		            } else if ($vs.min($scope.msg.text, 1)) {
+		                $scope.msg.textError = 'Please use no less than 1 characters.';
+		                bPass = false;
+		            }
+		            return bPass;
+			}
+			
+			function validate2(values){
 				var rules = {
 						'message':{ 
 							'required' : {},
