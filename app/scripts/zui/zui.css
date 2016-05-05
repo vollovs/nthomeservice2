@@ -38,10 +38,15 @@
 /* List end */
 
 /* Grid start */
+.z-grid{
+	margin-left:0px;
+	margin-right:0px;
+}
+
 .z-grid td{
 	line-height:32px;
-	padding-left:10px;
-	padding-right:10px;
+	padding-left:6px;
+	padding-right:6px;
 	border:1px solid #ccc;
 }
 .z-grid-head td{

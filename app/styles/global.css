@@ -65,6 +65,20 @@
 }
 /* Global define start*/
 
-.msg-body span{
+.msg-body {
+	border: 1px solid #ddd;
+	padding-top: 15px;
+	padding-bottom:15px;
+	font-size:14px;
+}
+
+.msg-body div.z-title{
 	font-weight:bold;
+	max-width:80px;
+}
+
+#msg-manager .l-label{
+	font-size:14px;
+	font-weight:bold;
+	padding-top:6px;
 }

@@ -2,12 +2,56 @@
 	<div class="page-content">
 			<tab opt=menu.opt data=menu.data class="z-tab">
 		    	<div class="z-page" data-index="0" id="msg-manager" class="row mgr-page">
-		    		<div class="col-sm-8">
-						<grid opt=msgGrid.opt data=msgGrid.data on-select="msgGrid.onSelect(item)"></grid>
+		    		<div class="col-sm-8" style="padding-left:0px;margin-left:0px;">
+		    		
+		    			<div class="row" style="padding-left:0px;">
+		    				<!-- div class="col-sm-4">
+		    					<div class="col-sm-12 l-label"><span translate>City</span>:</div>
+								<div class="col-sm-12 l-field">
+									<dropdown opt=cityDropdown.opt data=cityDropdown.data selected=cityDropdown.selected></dropdown>
+								</div>
+
+							</div-->
+							
+			    			<div class="col-sm-7" style="padding-left:0px;">
+			    				<input class="form-control" placeholder="Search box"/>
+			    			</div>
+			    			
+			    					    				
+							<div class="col-sm-5">
+								<div class="col-sm-3 l-label"><span translate>Service</span>:</div>
+								<div class="col-sm-9 l-field">
+									<dropdown opt=serviceDropdown.opt data=serviceDropdown.data selected=serviceDropdown.selected></dropdown>
+								</div>
+							</div>
+							
+		    			</div>
+						<div class="row" style="margin-top:15px;">
+							<grid opt=msgGrid.opt data=msgGrid.data on-select="msgGrid.onSelect(item)"></grid>
+						</div>
+						
 					</div>
 					<div class="msg-body col-sm-4">
-						<div><span>From:</span>{{item.from}}</div>
-						<div><span>Date:</span>{{item.dt}}</div>
+						<div class="row msg-head-item">
+							<div class="col-sm-2 z-title">From:</div>
+							<div class="col-sm-10">{{item.from}}</div>
+						</div>
+						<div class="row msg-head-item">
+							<div class="col-sm-2 z-title">Sent:</div>
+							<div class="col-sm-10">{{item.dt}}</div>
+						</div>
+						<div class="row msg-head-item">
+							<div class="col-sm-2 z-title">City:</div>
+							<div class="col-sm-10">{{item.city}}</div>
+						</div>
+						<div class="row msg-head-item">
+							<div class="col-sm-2 z-title">Service:</div>
+							<div class="col-sm-10">{{item.service}}</div>
+						</div>
+						<div class="row msg-head-item">
+							<div class="col-sm-2 z-title">Phone:</div>
+							<div class="col-sm-10">{{item.phone}}</div>
+						</div>
 						<br>
 						<div>{{item.text}}</div>
 					</div>

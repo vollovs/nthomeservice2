@@ -229,6 +229,18 @@ angular.module('zui',[])
 					}
 				}
 				
+				if(scope.opt){
+					if(!scope.opt.title.font){
+						scope.opt.title.font = {size:'14px;'};
+					}
+					if(!scope.opt.line){
+						scope.opt.line = {height:'28px;'};
+					}
+					if(!scope.opt.font){
+						scope.opt.font = {size:'14px;'};
+					}
+				}
+				
 				if(scope.opt && scope.opt.template){ // has row template
 					if(scope.data && scope.data.length > 0){
 						// to be support template

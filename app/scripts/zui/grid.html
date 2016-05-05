@@ -2,7 +2,7 @@
 	<table class="z-grid-head">
 		<tbody>
 			<tr>
-				<td ng-repeat="field in opt.fields" style="width:{{field.width}};">
+				<td ng-repeat="field in opt.fields" style="width:{{field.width}}; font-size:{{opt.title.font.size}}">
 					{{field.text}}
 				</td>
 			</tr>
@@ -11,7 +11,7 @@
 	<table class="z-grid-body">
 		<tbody>
 			<tr ng-repeat="row in data" ng-click="select(row)" z-id="{{row.id}}">
-				<td ng-repeat="field in opt.fields" style="width:{{field.width}};">
+				<td ng-repeat="field in opt.fields" style="width:{{field.width}};line-height:{{opt.line.height}};font-size:{{opt.font.size}}">
 					{{ row[field.name] | limitTo:field.limit }}
 				</td>
 			</tr>

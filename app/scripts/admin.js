@@ -16,6 +16,33 @@ angular.module('admin', [])
 					]
 				}
 			
+			// message search
+			$scope.cityDropdown = {
+					data: [{name:'Branptom'},{name:'Kitchener'},{name:'Waterloo'}, {name:'Toronto'} ],
+					opt:{
+						placeholder:'Please Select ...',
+						textField: 'name',
+						valueField: 'name'
+					},
+					selected:{
+						'text':'Please Select ...',
+						'val':''
+					}
+				}
+			
+			$scope.serviceDropdown = {
+					data: [{name:'Water Heater'}, {name:'Furnance'}, {name:'A/C'} ],
+					opt:{
+						placeholder:'Please Select ...',
+						textField: 'name',
+						valueField: 'name'
+					},
+					selected:{
+						'text':'Please Select ...',
+						'val':''
+					}
+				}
+			
 /*			$scope.menu = {
 					data: [//{name:'User Management', val:'user'},
 					       {name:'Message Management', val:'msg'}
@@ -53,9 +80,13 @@ angular.module('admin', [])
 			$scope.msgGrid = {
 					data: [],
 					opt:{
-						fields: [{name:'dt', text:'Time', width:'170px'},
-						         {name:'from', text:'From', width:'160px'}, 
-						         {name:'text', text:'Message', width:'320px'}]
+						line: { height: '22px'},
+						font: { size: '11px'},
+						title: { font: {size: '12px'}},
+						fields: [{name:'dt', text:'Sent', width:'120px'},
+						         {name:'from', text:'From', width:'130px'},
+						         {name:'city', text:'City', width:'80px'},
+						         {name:'text', text:'Message', width:'300px'}]
 					},
 					selected:{dt:'', from:'', msg: ''}, 
 					onSelect:function(item){
